@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f9dce6">
+
+  <title>What I'll Do Better 🌷</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body data-page="promises">
+
+  <!-- Background and floating decorations -->
+  <div class="photo-bg" aria-hidden="true"></div>
+  <div class="tint" aria-hidden="true"></div>
+  <div class="floaties" aria-hidden="true"></div>
+
+  <main class="page-shell">
+
+    <!-- Back navigation -->
+    <a class="back-link" href="apology.html">
+      ← Back to my letter
+    </a>
+
+    <div class="eyebrow">Words need actions</div>
+
+    <!-- Promises section -->
+    <section class="glass">
+
+      <div class="sticker">🌷 🐰 💗</div>
+
+      <h1>
+        What I want to do
+        <span class="script-word">better</span>
+      </h1>
+
+      <p class="lead">
+        These are not promises to make you stay.
+        They are changes I need to work on because they matter and you deserve.
+      </p>
+
+      <!-- Tap each promise to reveal more -->
+      <div class="promise-list">
+
+        <button class="promise" type="button">
+          <span>🌼</span>
+          <span>
+            <strong>Listen properly</strong>
+            <small>
+              Listen to understand, instead of assuming
+              I already know how you feel.
+              I will listen to you completely, what you are saying,
+              what you are feeling, what you wanted to say, instead od assuming things in my head
+            </small>
+          </span>
+          <b>＋</b>
+        </button>
+
+        <button class="promise" type="button">
+          <span>🌷</span>
+          <span>
+            <strong>Show care consistently</strong>
+            <small>
+              Make time, check in, and show thoughtfulness
+              without waiting until something is wrong.
+              Even the smallest details, i will never miss to notice. 
+              I will never miss to appriciate, I will never miss to think about your safety.
+            </small>
+          </span>
+          <b>＋</b>
+        </button>
+
+        <button class="promise" type="button">
+          <span>💌</span>
+          <span>
+            <strong>Put in real effort</strong>
+            <small>
+              Remember the little things and show that
+              our relationship deserves attention.
+              I will keep a thousand times effort, I will keep you happy,
+              I will make you feel special.
+            </small>
+          </span>
+          <b>＋</b>
+        </button>
+
+        <button class="promise" type="button">
+          <span>🫶</span>
+          <span>
+            <strong>Respect your feelings and space</strong>
+            <small>
+              Accept your choices, listen without arguing,
+              and give you room when you need it. not like I will leave you alone to face your troubles,
+              I will always be there to lend a shoulder and have your back.
+            </small>
+          </span>
+          <b>＋</b>
+        </button>
+
+      </div>
+
+      <p class="tiny-note">
+        Tap each promise to open it.
+        I know change has to be shown over time.
+      </p>
+
+    </section>
+
+    <!-- Closing message -->
+    <section class="glass closing">
+
+      <div class="sticker">🧸❤️</div>
+
+      <h2>Whatever you feel, I will respect it.</h2>
+
+      <p>
+        I care about you, Anuu.
+        You don't owe me forgiveness or a reply.
+        Thank you for reading this far.
+      </p>
+
+      <p class="signature">
+        With a sincere apology,
+        <br>
+        <span>Sai</span>
+      </p>
+
+      <a class="button secondary" href="index.html">
+        Return to the beginning ↺
+      </a>
+
+    </section>
+
+    <!-- Background music -->
+    <section class="music-card">
+
+      <div class="music-copy">
+        <span class="music-icon">♫</span>
+
+        <div>
+          <strong>A song for this page</strong>
+          <small>Bairan 💗</small>
+        </div>
+      </div>
+
+      <audio id="pageSong" autoplay loop preload="auto">
+        <source
+          src="music/bairan_main_section.mp3"
+          type="audio/mpeg"
+        >
+        Your browser does not support audio.
+      </audio>
+
+      <p id="musicStatus" class="audio-help" aria-live="polite">
+        Trying to play our song...
+      </p>
+
+    </section>
+
+  </main>
+
+  <!-- Attempt autoplay and provide a fallback if blocked -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const song = document.getElementById("pageSong");
+      const status = document.getElementById("musicStatus");
+
+      if (!song || !status) return;
+
+      song.volume = 0.65;
+
+      song.play()
+        .then(() => {
+          status.textContent = "Our song is playing 💗";
+        })
+        .catch(() => {
+          status.textContent =
+            "Autoplay was blocked. Tap anywhere on this page to try playing the song.";
+
+          document.addEventListener("click", function startSong() {
+            song.play().then(() => {
+              status.textContent = "Our song is playing 💗";
+            }).catch(() => {
+              status.textContent =
+                "Playback failed. Check the audio file path.";
+            });
+          }, { once: true });
+        });
+
+      song.addEventListener("error", () => {
+        status.textContent =
+          "Song not found. Check music/bairan_main_section.mp3.";
+      });
+    });
+  </script>
+
+</body>
+</html>
